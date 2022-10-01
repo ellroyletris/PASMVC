@@ -117,10 +117,10 @@ public class model_siswa implements controller_siswa{
 
     @Override
     public void Baru(abjr abumat) throws SQLException {
-//        abumat.txtNIS.setText("");
-//        abumat.txtNama.setText("");
-//        abumat.rbLaki.setSelected(true);
-//        abumat.cbJurusan.setSelectedIndex(0);
+        abumat.txtNIS.setText("");
+        abumat.txtNama.setText("");
+        abumat.rbLaki.setSelected(true);
+        abumat.cbJurusan.setSelectedIndex(0);
     }
 
     @Override
