@@ -49,29 +49,29 @@ public class model_siswa implements controller_siswa{
 
     @Override
     public void Ubah(abjr abumat) throws SQLException {
-//       if (abumat.rbLaki.isSelected()) {
-//           jk = "laki-laki";
-//       } else {
-//           jk = "Perempuan";
-//       }
-//       try {
-//           Connection con = koneksi.getCon();
-//           String sql = "UPDATE abumat SET nama=?, jenis _kelamin=?," + "jurusan=? WHERE nis=?";
-//           PreparedStatement prepare = con.prepareStatement(sql);
-//           prepare.setString (1, abumat.txtNIS.getText());
-//           prepare.setString (2, abumat.txtNama.getText());
-//           prepare.setString (3, jk);
-//           prepare.setString (4, (String) abumat.cbJurusan.getSelectedItem());
-//           prepare.executeUpdate();
-//           JOptionPane.showMessageDialog(null, "Data berhasil diubah");
-//           prepare.close();
-//       } catch (Exception e) {
-//           System.out.println(e);
-//       } finally {
-//           Tampil(abumat);
-//           abumat.setLebarKolom();
-//           Baru(abumat);
-//       }
+       if (abumat.rbLaki.isSelected()) {
+           jk = "laki-laki";
+       } else {
+           jk = "Perempuan";
+       }
+       try {
+           Connection con = koneksi.getCon();
+           String sql = "UPDATE abumat SET nama=?, jenis _kelamin=?," + "jurusan=? WHERE nis=?";
+           PreparedStatement prepare = con.prepareStatement(sql);
+           prepare.setString (1, abumat.txtNIS.getText());
+           prepare.setString (2, abumat.txtNama.getText());
+           prepare.setString (3, jk);
+           prepare.setString (4, (String) abumat.cbJurusan.getSelectedItem());
+           prepare.executeUpdate();
+           JOptionPane.showMessageDialog(null, "Data berhasil diubah");
+           prepare.close();
+       } catch (Exception e) {
+           System.out.println(e);
+       } finally {
+           Tampil(abumat);
+           abumat.setLebarKolom();
+           Baru(abumat);
+       }
     }
 
     @Override
