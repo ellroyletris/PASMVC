@@ -125,25 +125,25 @@ public class model_siswa implements controller_siswa{
 
     @Override
     public void KlikTabel(abjr abumat) throws SQLException {
-//        try {
-//            int pilih = abumat.tabel.getSelectedRow();
-//            if (pilih == -1) {
-//                return;
-//                
-//            }
-//            abumat.txtNIS.setText(abumat.tblModel.getValueAt(pilih, 0).toString());
-//            abumat.txtNama.setText(abumat.tblModel.getValueAt(pilih, 1).toString());
-//            abumat.cbJurusan.setSelectedItem(abumat.tblModel.getValueAt(pilih, 3).toString());
-//            jk = String.valueOf(abumat.tblModel.getValueAt(pilih, 2));
-//        } catch (Exception e) {
-//            
-//        }
-//        if (abumat.rbLaki.getText().equals(jk)) {
-//            abumat.rbLaki.setSelected(true);
-//            
-//        }else {
-//            abumat.rbPerempuan.setSelected(true);
-//        }
+        try {
+            int pilih = abumat.tabel.getSelectedRow();
+            if (pilih == -1) {
+                return;
+                
+            }
+            abumat.txtNIS.setText(abumat.tblModel.getValueAt(pilih, 0).toString());
+            abumat.txtNama.setText(abumat.tblModel.getValueAt(pilih, 1).toString());
+            abumat.cbJurusan.setSelectedItem(abumat.tblModel.getValueAt(pilih, 3).toString());
+            jk = String.valueOf(abumat.tblModel.getValueAt(pilih, 2));
+        } catch (Exception e) {
+            
+        }
+        if (abumat.rbLaki.getText().equals(jk)) {
+            abumat.rbLaki.setSelected(true);
+            
+        }else {
+            abumat.rbPerempuan.setSelected(true);
+        }
     }
 
   
