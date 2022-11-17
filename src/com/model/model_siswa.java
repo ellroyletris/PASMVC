@@ -56,12 +56,12 @@ public class model_siswa implements controller_siswa{
        }
        try {
            Connection con = koneksi.getCon();
-           String sql = "UPDATE abumat SET nama=?, jenis _kelamin=?," + "jurusan=? WHERE nis=?";
+           String sql = "UPDATE abumat SET Nama = ? , jenis _kelamin= ? ," + "jurusan= ? WHERE nis= ? ";
            PreparedStatement prepare = con.prepareStatement(sql);
-           prepare.setString (1, abumat.txtNIS.getText());
-           prepare.setString (2, abumat.txtNama.getText());
-           prepare.setString (3, jk);
-           prepare.setString (4, (String) abumat.cbJurusan.getSelectedItem());
+           prepare.setString (4, abumat.txtNIS.getText());
+           prepare.setString (1, abumat.txtNama.getText());
+           prepare.setString (2, jk);
+           prepare.setString (3, (String) abumat.cbJurusan.getSelectedItem());
            prepare.executeUpdate();
            JOptionPane.showMessageDialog(null, "Data berhasil diubah");
            prepare.close();

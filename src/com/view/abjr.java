@@ -95,6 +95,8 @@ public class abjr extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panel.setBackground(new java.awt.Color(255, 0, 102));
+
         jLabel1.setText("NIS");
 
         jLabel2.setText("Nama");
@@ -120,6 +122,11 @@ public class abjr extends javax.swing.JFrame {
 
         btnBaru.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnBaru.setText("Baru");
+        btnBaru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaruActionPerformed(evt);
+            }
+        });
 
         btnSimpan.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSimpan.setText("Simpan");
@@ -130,7 +137,7 @@ public class abjr extends javax.swing.JFrame {
         });
 
         btnUbah.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnUbah.setText("Ubah");
+        btnUbah.setText("Update");
         btnUbah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUbahActionPerformed(evt);
@@ -153,6 +160,8 @@ public class abjr extends javax.swing.JFrame {
             }
         });
 
+        tabel.setBackground(new java.awt.Color(0, 153, 153));
+        tabel.setForeground(new java.awt.Color(255, 255, 255));
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -185,8 +194,10 @@ public class abjr extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(btnBaru))
-                        .addGap(55, 55, 55)
+                            .addGroup(panelLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(btnBaru)))
+                        .addGap(33, 33, 33)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelLayout.createSequentialGroup()
                                 .addComponent(btnSimpan)
@@ -204,7 +215,7 @@ public class abjr extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(rbPerempuan))
                                 .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +253,10 @@ public class abjr extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,6 +306,14 @@ public class abjr extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tabelMouseClicked
 
+    private void btnBaruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaruActionPerformed
+        try {
+            model.Baru(this);
+        } catch (Exception ex) {
+            Logger.getLogger(abjr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnBaruActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -332,7 +354,7 @@ public class abjr extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnBaru;
+    private javax.swing.JButton btnBaru;
     public javax.swing.JButton btnHapus;
     public javax.swing.JButton btnKeluar;
     public javax.swing.JButton btnSimpan;
